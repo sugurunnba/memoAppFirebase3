@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>357614848477-lmh2kjl48c1p724jg49pmjsgm0gme509.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.357614848477-lmh2kjl48c1p724jg49pmjsgm0gme509</string>
+	<key>API_KEY</key>
+	<string>AIzaSyALK8UxJ9Zj-MmtJGerKsoD0DhnHTShyWw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>357614848477</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.Stakaki.memoAppFirebase2</string>
+	<key>PROJECT_ID</key>
+	<string>memoappfirebase-7c0b7</string>
+	<key>STORAGE_BUCKET</key>
+	<string>memoappfirebase-7c0b7.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:357614848477:ios:7e9b58f252cebb9f280e34</string>
+</dict>
+</plist>
