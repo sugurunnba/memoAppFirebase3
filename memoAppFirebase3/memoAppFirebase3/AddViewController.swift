@@ -6,14 +6,32 @@
 //
 
 import UIKit
+import Firebase
+
 
 class AddViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var textText: UITextField!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
+    
+    @IBAction func submitButtonTapped(_ sender: Any) {
+        let data = Firestore.firestore().collection("memos")
+        data.addDocument(data: [
+            "name": nameText.text!,
+            "text": textText.text!
+        ]) { error in
+            if let error = error {
+                print("ドキュメントの追加に失敗しました:", error)
+            }
+        }
+
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     
 
     /*

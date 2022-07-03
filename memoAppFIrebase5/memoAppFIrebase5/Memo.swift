@@ -6,3 +6,15 @@
 //
 
 import Foundation
+import Firebase
+
+struct Memo {
+    var name: String = ""
+    var text: String = ""
+    
+    init(dic: [String: Any]){
+         self.name = dic["name"] as! String
+         self.text = dic["text"] as! String
+    }
+}
+    

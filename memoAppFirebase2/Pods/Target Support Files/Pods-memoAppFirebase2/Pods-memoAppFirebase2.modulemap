@@ -1,0 +1,6 @@
+framework module Pods_memoAppFirebase2 {
+  umbrella header "Pods-memoAppFirebase2-umbrella.h"
+
+  export *
+  module * { export * }
+}
