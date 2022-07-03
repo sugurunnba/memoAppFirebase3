@@ -21,11 +21,17 @@
                                 <rect key="frame" x="30" y="118" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nameTextField:" destination="Y6W-OH-hqX" eventType="editingChanged" id="ezS-js-FYG"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="テキスト" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Bm-Xh-xp5">
                                 <rect key="frame" x="30" y="162" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textTextField:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="cWb-ig-NIq"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVU-WG-wLS">
                                 <rect key="frame" x="30" y="206" width="354" height="31"/>
@@ -58,6 +64,7 @@
                     <navigationItem key="navigationItem" id="5pc-Sp-3Kf"/>
                     <connections>
                         <outlet property="nameText" destination="Cb2-Qk-OWK" id="dby-YD-iKy"/>
+                        <outlet property="saveButton" destination="eVU-WG-wLS" id="gCt-Wg-3P5"/>
                         <outlet property="textText" destination="1Bm-Xh-xp5" id="2Qz-1W-VCW"/>
                     </connections>
                 </viewController>

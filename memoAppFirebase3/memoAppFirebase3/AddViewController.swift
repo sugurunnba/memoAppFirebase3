@@ -13,9 +13,17 @@ class AddViewController: UIViewController {
 
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var textText: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
+    
+    override func viewDidLoad() {
+        self.saveButton.isEnabled = false
+        updateSaveButton()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+//        self.saveButton.isEnabled = false
+//        updateSaveButton()
     }
     
     @IBAction func submitButtonTapped(_ sender: Any) {
@@ -30,6 +38,24 @@ class AddViewController: UIViewController {
         }
 
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func nameTextField(_ sender: Any) {
+        updateSaveButton()
+    }
+    
+    @IBAction func textTextField(_ sender: Any) {
+        updateSaveButton()
+    }
+    
+    private func updateSaveButton(){
+        let nameTextStates = self.nameText.text ?? ""
+        let textTextStates = self.textText.text ?? ""
+        if(nameTextStates.isEmpty || textTextStates.isEmpty){
+            self.saveButton.isEnabled = false
+        } else {
+            self.saveButton.isEnabled = true
+        }
     }
     
     

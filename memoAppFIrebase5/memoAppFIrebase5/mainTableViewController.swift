@@ -12,13 +12,14 @@ class mainTableViewController: UITableViewController {
 
     var memos: [Memo]! = []
     
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        print("成功")
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("成功")
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
         let data = Firestore.firestore()
         data.collection("memos").getDocuments {[self] (snap, err) in
@@ -31,6 +32,7 @@ class mainTableViewController: UITableViewController {
                     let memo = Memo.init(dic: data)
                     self.memos.append(memo)
                 }
+                print(self.memos) 
             }
         }
         self.tableView.reloadData()

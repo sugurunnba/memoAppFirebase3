@@ -31,8 +31,8 @@ class RootTableViewController: UITableViewController {
             } else {
                 for document in snap!.documents {
                     let data = document.data()
-                    print(data["name"]!)
-                    let memo = Memo.init(dic: data)
+                    let memo = Memo.init(dic: data, documentId: document.documentID)
+                    print(memo.documentId)
     //                メモの配列に追加
                     self.memos.append(memo)
                 }
@@ -90,22 +90,24 @@ class RootTableViewController: UITableViewController {
     }
     
 //    セルタップ時
-    
-
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
+    // セルがタップされた時の処理
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      print("tapped")
+      performSegue(withIdentifier: "EditViewController", sender: self)
+    }
 
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             memos.remove(at: indexPath.row)
-//            Firestore.firestore().collection("memos").document(memos[indexPath.row].documentID).delete()
-            Firestore.firestore().collection("memos").document("ここのIDの取得方法を教えていただけませんか？").delete() { err in
+
+            Firestore.firestore().collection("memos").document(memos[indexPath.row].documentId).delete() { err in
                 if let err = err {
                     print("Error removing document: \(err)")
                 } else {
@@ -134,14 +136,18 @@ class RootTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "EditViewController" {
+            
+            let NC = segue.destination as! UINavigationController
+            let nextVC = NC.topViewController as! EditViewController
+            nextVC.memo = self.memos[(self.tableView.indexPathForSelectedRow?.row)!]
+        }
     }
-    */
+
 
 }

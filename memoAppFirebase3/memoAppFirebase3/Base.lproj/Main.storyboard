@@ -3,6 +3,8 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,6 +41,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="5so-f5-fBH" kind="presentation" identifier="EditViewController" id="FOK-BE-qYa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -76,8 +81,92 @@
             </objects>
             <point key="canvasLocation" x="35" y="31"/>
         </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="0Wr-EZ-TrI">
+            <objects>
+                <viewController storyboardIdentifier="EditViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9tf-F1-Lsj" customClass="EditViewController" customModule="memoAppFirebase3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MEf-G0-Na2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名前" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wKd-FO-eAJ">
+                                <rect key="frame" x="30" y="86" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nameTextField:" destination="9tf-F1-Lsj" eventType="editingDidEnd" id="XGP-hJ-hjH"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="テキスト" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PpB-ef-KiT">
+                                <rect key="frame" x="30" y="130" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textTextField:" destination="9tf-F1-Lsj" eventType="editingDidEnd" id="Ixj-ng-3xw"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwV-HW-H5T">
+                                <rect key="frame" x="30" y="174" width="354" height="31"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="登録する"/>
+                                <connections>
+                                    <action selector="submitButtonTapped:" destination="9tf-F1-Lsj" eventType="touchUpInside" id="nSg-kK-bgI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2VY-x0-AEC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wKd-FO-eAJ" firstAttribute="centerX" secondItem="MEf-G0-Na2" secondAttribute="centerX" id="9Tk-Gb-LfV"/>
+                            <constraint firstItem="PpB-ef-KiT" firstAttribute="leading" secondItem="2VY-x0-AEC" secondAttribute="leading" constant="30" id="Eqc-uO-ihT"/>
+                            <constraint firstItem="2VY-x0-AEC" firstAttribute="trailing" secondItem="WwV-HW-H5T" secondAttribute="trailing" constant="30" id="FPm-Aj-G57"/>
+                            <constraint firstItem="WwV-HW-H5T" firstAttribute="top" secondItem="PpB-ef-KiT" secondAttribute="bottom" constant="10" id="HZi-1i-BQ9"/>
+                            <constraint firstItem="WwV-HW-H5T" firstAttribute="centerX" secondItem="MEf-G0-Na2" secondAttribute="centerX" id="TcM-vM-hqe"/>
+                            <constraint firstItem="PpB-ef-KiT" firstAttribute="top" secondItem="wKd-FO-eAJ" secondAttribute="bottom" constant="10" id="Zya-OM-a2e"/>
+                            <constraint firstItem="2VY-x0-AEC" firstAttribute="trailing" secondItem="wKd-FO-eAJ" secondAttribute="trailing" constant="30" id="a3w-OY-a2O"/>
+                            <constraint firstItem="2VY-x0-AEC" firstAttribute="trailing" secondItem="PpB-ef-KiT" secondAttribute="trailing" constant="30" id="bPU-S3-sh5"/>
+                            <constraint firstItem="wKd-FO-eAJ" firstAttribute="top" secondItem="2VY-x0-AEC" secondAttribute="top" constant="30" id="kQR-TB-QUP"/>
+                            <constraint firstItem="PpB-ef-KiT" firstAttribute="centerX" secondItem="MEf-G0-Na2" secondAttribute="centerX" id="qtZ-ug-gfZ"/>
+                            <constraint firstItem="wKd-FO-eAJ" firstAttribute="leading" secondItem="2VY-x0-AEC" secondAttribute="leading" constant="30" id="wG1-3n-F5u"/>
+                            <constraint firstItem="WwV-HW-H5T" firstAttribute="leading" secondItem="2VY-x0-AEC" secondAttribute="leading" constant="30" id="xfT-s9-1E3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="NGN-E1-8Qu"/>
+                    <connections>
+                        <outlet property="nameText" destination="wKd-FO-eAJ" id="KEc-W7-nW0"/>
+                        <outlet property="saveButton" destination="WwV-HW-H5T" id="7Ti-BD-1Av"/>
+                        <outlet property="textText" destination="PpB-ef-KiT" id="Aje-4k-Cu7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KNQ-kP-f1h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2968.115942028986" y="30.803571428571427"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MpW-3R-zXP">
+            <objects>
+                <navigationController storyboardIdentifier="editNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5so-f5-fBH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UM5-b5-pJE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9tf-F1-Lsj" kind="relationship" relationship="rootViewController" id="nCV-vo-p4m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JKE-uo-sLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2057.971014492754" y="30.803571428571427"/>
+        </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

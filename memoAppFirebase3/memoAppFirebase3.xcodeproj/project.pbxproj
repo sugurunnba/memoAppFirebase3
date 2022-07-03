@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DA7761F287176F7000B5CA3 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA7761E287176F7000B5CA3 /* EditViewController.swift */; };
 		3DCE0E342867E6AC00143F06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE0E332867E6AC00143F06 /* AppDelegate.swift */; };
 		3DCE0E362867E6AC00143F06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE0E352867E6AC00143F06 /* SceneDelegate.swift */; };
 		3DCE0E382867E6AC00143F06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE0E372867E6AC00143F06 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		06AEDDAFF6BA1F8CD9383520 /* Pods_memoAppFirebase3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_memoAppFirebase3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DA7761E287176F7000B5CA3 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		3DCE0E302867E6AC00143F06 /* memoAppFirebase3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memoAppFirebase3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCE0E332867E6AC00143F06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DCE0E352867E6AC00143F06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,11 +82,12 @@
 				3DCE0E3C2867E6AE00143F06 /* Assets.xcassets */,
 				3DCE0E3E2867E6AE00143F06 /* LaunchScreen.storyboard */,
 				3DCE0E412867E6AE00143F06 /* Info.plist */,
-				3DCE0E392867E6AC00143F06 /* Main.storyboard */,
 				3DCE0E492867EE4700143F06 /* RootTableViewController.swift */,
+				3DCE0E392867E6AC00143F06 /* Main.storyboard */,
 				3DCE0E4B2867F0A100143F06 /* Memo.swift */,
 				3DF5E3B928680CE00039A489 /* AddViewController.swift */,
 				3DF5E3BB28680CE90039A489 /* Add.storyboard */,
+				3DA7761E287176F7000B5CA3 /* EditViewController.swift */,
 			);
 			path = memoAppFirebase3;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				3DCE0E362867E6AC00143F06 /* SceneDelegate.swift in Sources */,
 				3DCE0E4A2867EE4700143F06 /* RootTableViewController.swift in Sources */,
 				3DCE0E4C2867F0A100143F06 /* Memo.swift in Sources */,
+				3DA7761F287176F7000B5CA3 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
